@@ -1,0 +1,23 @@
+pipelinepipeline {
+    agent any 
+    
+    tools{
+        jdk 'jdk11'
+        maven 'maven-3.9.9'
+    }
+    
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+    }
+    
+    stages{
+        
+        stage("test"){
+            steps{
+                script{
+                    sh "echo hello world"
+                }
+            }
+        }
+    }
+}
